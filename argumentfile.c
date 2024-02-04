@@ -8,6 +8,6 @@ void valid_argument(int argc)
 	if (argc == 2)
 		return;
 
-	dprintf(2, "USAGE:  monty file\n");
+	fprintf(stderr, "USAGE:  monty file\n");
 	exit(EXIT_FAILURE);
 }

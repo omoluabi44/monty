@@ -8,6 +8,7 @@ int stack_length = 0;
 void push(stack_t **stack, unsigned int line_number)
 {
 
+	stack_t *h;
 	if ((N_token <= 1) || !(is_number(tokens[1])))
 	{
 		free_tokes();
@@ -15,10 +16,9 @@ void push(stack_t **stack, unsigned int line_number)
 		free(head);
 		free(line);
 		close_stream();
-		dprintf(2, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	stack_t *h;
 
 	h = *stack;
 	h = malloc(sizeof(stack_t));
@@ -110,7 +110,7 @@ void run_instr(void)
  */
 void invalid_instr(void)
 {
-	dprintf(2, "L%d: unknow instruction %s\n",
+	fprintf(stderr, "L%d: unknow instruction %s\n",
 		line_number, tokens[0]);
 	close_stream();
 	free_tokes();
