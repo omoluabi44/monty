@@ -41,6 +41,8 @@ FILE *file(char *filename)
 	if (!ptr)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		free(line);
+		free_arguments();
 		exit(EXIT_FAILURE);
 	}
 	return (ptr);
