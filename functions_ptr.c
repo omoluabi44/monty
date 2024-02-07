@@ -67,6 +67,22 @@ void pall(stack_t **stack, unsigned int line_number)
 	free_tokes();
 
 }
+void pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+	(void) line_number;
+	(void) stack;
+
+	if (head == NULL)
+		return;
+
+	tmp = head;
+	if (tmp->next != NULL)
+		printf("%d\n", tmp->n);
+	else
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	free_tokes();
+}
 /**
  *function_ptr - call appropriate function
  */
@@ -77,6 +93,7 @@ void function_ptr(void)
 	instruction_t all_funcs[] = {
 		{"push", &push},
 		{"pall", &pall},
+		{"pint", &pint},
 		{NULL, NULL}
 	};
 	if (N_token == 0)
