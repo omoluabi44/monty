@@ -9,6 +9,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 
 	stack_t *h;
+
 	if ((N_token <= 1) || !(is_number(tokens[1])))
 	{
 		free_tokes();
