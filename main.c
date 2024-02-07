@@ -27,17 +27,6 @@ int main(int argc, char *argv[])
 	}
 	free_arguments();
 	return (0);
-	/**
-	while (fscanf(fileOpen, "%s", line) == 1)
-	{
-		printf("hello");
-		line_number += 1;
-		tokenize_opcodes();
-		function_ptr();
-		run_instr();
-	}
-
-	return (0);*/
 }
 /**
  * file - the file function

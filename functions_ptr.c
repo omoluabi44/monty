@@ -110,7 +110,7 @@ void run_instr(void)
  */
 void invalid_instr(void)
 {
-	fprintf(stderr, "L%d: unknow instruction %s\n",
+	fprintf(stderr, "L%d: unknown instruction %s\n",
 		line_number, tokens[0]);
 	close_stream();
 	free_tokes();
